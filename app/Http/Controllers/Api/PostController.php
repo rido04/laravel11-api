@@ -48,4 +48,13 @@ class PostController extends Controller
         // return response
         return new PostResource( true, 'Data Post Berhasil Di tambahkan', $post);
     }
+
+    public function show($id)
+    {
+        // find post by ID
+        $post = Post::find($id);
+
+        // return single post as a resource
+        return new PostResource( true, 'Detail Data Post', $post);
+    }
 }
